@@ -1,0 +1,473 @@
+/* Reset básico */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body , #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Fundo e cores */
+body {
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container do chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 800px;
+  height: 95vh;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Header do chat */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #1b1b1b;
+  border-bottom: 1px solid #333;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 180px;
+  z-index: 10;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+}
+
+.menu-dropdown li {
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.language-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.language-select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1f1f1f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.bot-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.new-chat button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0b84ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.new-chat button:hover {
+  background-color: #0056b3;
+}
+
+/* Caixa de mensagens */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #121212;
+}
+
+/* Mensagens */
+.message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message-user {
+  background-color: #0b84ff;
+  color: whitesmoke;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message-bot {
+  background-color: #2c2c2c;
+  color: whitesmoke;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Caixa de input */
+.input-box {
+  display: flex;
+  padding: 15px 20px;
+  gap: 10px;
+  background-color: #1b1b1b;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.input-box button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #0b84ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.input-box button:hover {
+  background-color: #0056b3;
+}
+
+/* Scroll estilizado */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* =====================
+   ESTILOS PARA AUTENTICAÇÃO
+   ===================== */
+
+/* Container da página de autenticação */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #121212;
+}
+
+/* Card de autenticação */
+.auth-card {
+  background-color: #1f1f1f;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #333;
+}
+
+/* Header do card de autenticação */
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Seletor de idioma na página de auth */
+.language-selector {
+  margin-top: 15px;
+}
+
+.language-selector .language-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #2c2c2c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Formulário de autenticação */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Grupos de campos do formulário */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0b84ff;
+  box-shadow: 0 0 0 2px rgba(11, 132, 255, 0.2);
+}
+
+.form-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+/* Botões de autenticação */
+.auth-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auth-button.primary {
+  background-color: #0b84ff;
+  color: #fff;
+}
+
+.auth-button.primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.auth-button.secondary {
+  background-color: transparent;
+  color: #0b84ff;
+  border: 1px solid #0b84ff;
+}
+
+.auth-button.secondary:hover:not(:disabled) {
+  background-color: #0b84ff;
+  color: #fff;
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mensagens de erro */
+.error-message {
+  background-color: #ff4444;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* =====================
+   MELHORIAS NOS ESTILOS EXISTENTES
+   ===================== */
+
+/* Melhorias no header do chat */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Melhorias nas mensagens */
+.message-content {
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message-timestamp {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.message-bot .message-timestamp {
+  text-align: left;
+}
+
+/* Melhorias no input box */
+.message-input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.message-input:focus {
+  background-color: #333;
+}
+
+.message-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.send-button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #0b84ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Banner de erro */
+.error-banner {
+  background-color: #ff4444;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+/* Estado vazio melhorado */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsivo para celular */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .chat-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .input-box input, .input-box button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsivo para auth */
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .auth-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .auth-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
